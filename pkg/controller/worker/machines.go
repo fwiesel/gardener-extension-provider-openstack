@@ -146,6 +146,7 @@ func (w *workerDelegate) generateMachineConfig(ctx context.Context) error {
 				"tags": map[string]string{
 					fmt.Sprintf("kubernetes.io-cluster-%s", w.worker.Namespace): "1",
 					"kubernetes.io-role-node":                                   "1",
+					"sap.cloud.vsmp-version": <get-the-vsmp-version-from-stencil>,
 				},
 				"credentialsSecretRef": map[string]interface{}{
 					"name":      w.worker.Spec.SecretRef.Name,
